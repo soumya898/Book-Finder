@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import BookDetail from "./pages/BookDetail";
-import  BookProvider  from "./context/BookContext";
+import { BookProvider } from "./context/BookContext";
+
 
 import "./index.css"
 ReactDOM.createRoot(document.getElementById("root")).render(
