@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar";
 import ResultsGrid from "../components/ResultsGrid";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
-import { BookContext } from "../Context/BookContext";
+import { BookContext } from "../Context/BookProvider";
 
 const Home = () => {
   const { loading, error, results } = useContext(BookContext);

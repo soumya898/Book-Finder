@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { fetchBooks } from "../utils/api";
-import { BookContext } from "../Context/BookContext";
+import { BookContext } from "../Context/BookProvider";
 
 const SearchBar = () => {
   // Get global state setters from BookContext

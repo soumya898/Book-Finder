@@ -3,23 +3,21 @@ import { fetchBooks } from "../utils/api";
 
 export const BookContext = createContext();
 
-export const BookProvider = ({ children }) => {
+const BookProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Load random/default books on first render
   useEffect(() => {
     const loadDefaultBooks = async () => {
       setLoading(true);
       setError("");
       try {
-        // default query (can be random each refresh if you want)
-        const books = await fetchBooks("tolkien");
+        const books = await fetchBooks("tolkien"); // default search
         setResults(books);
       } catch (err) {
-        setError(err.message,"Failed to load default books.");
+        setError("Failed to load default books."); // err.message can be added if needed
       } finally {
         setLoading(false);
       }
@@ -45,3 +43,5 @@ export const BookProvider = ({ children }) => {
     </BookContext.Provider>
   );
 };
+
+export default BookProvider;
