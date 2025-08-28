@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.results-container {
+  margin-top: 4rem; /* space from search input */
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem; /* space between cards */
+}
+
+@media (min-width: 640px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .results-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.results-bottom-note {
+  margin-top: 3rem; /* space below grid */
+  text-align: center;
+  color: #9ca3af; /* gray-400 */
+  font-size: 0.875rem;
+}
